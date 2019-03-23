@@ -19,6 +19,7 @@ class Artist
 
   def new_song(name, genre)
     song = Song.new(name, self, genre)
+    # binding.pry
   end
 
   def songs
@@ -28,10 +29,7 @@ class Artist
   end
 
   def genres
-    Song.all.select do |song|
-      binding.pry
-      @genres << song.genre if song.artist == self
-    end
+    Song.all.collect {|song| song.genre}.uniq
   end
 
 end
