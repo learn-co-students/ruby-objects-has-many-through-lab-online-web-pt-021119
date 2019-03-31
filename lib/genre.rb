@@ -9,7 +9,7 @@ class Genre
 end
 
 def self.all
-  self
+  self.all
 end 
 
   def songs
