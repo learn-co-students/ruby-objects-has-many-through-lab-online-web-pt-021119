@@ -7,9 +7,6 @@ class Song
     @name = name
     @artist = artist
     @genre = genre
-    @@all << @name
-    @@all << @artist
-    @@all << @genre
     @@all << self
   end 
   
