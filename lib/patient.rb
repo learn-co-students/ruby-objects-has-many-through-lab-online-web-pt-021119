@@ -11,7 +11,17 @@ class Patient
   end
 
   def new_appointment(doctor, date)
-    Appointment.new(date, self, doctor)
+     Appointment.new(self, doctor, date)
   end
     
+  def appointments
+    Appointment.all.select {|app| app.patient == self}
+    #binding.pry
+  end
+  
+  def doctors
+     appointments.collect do |app|
+       app.doctor
+   end
+  end
 end
